@@ -21,12 +21,14 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function (api) {
-  api.use('ecmascript');
-  api.use('meteor');
-  api.use('check');
-  api.use('blaze')
-  api.use('templating')
-  api.use('meteortesting:mocha');
-  api.use('practicalmeteor:chai');
-  api.use('arggh:teleport');
+  api.use([
+    'ecmascript',
+    'meteor',
+    'check',
+    'blaze',
+    'templating',
+    'meteortesting:mocha',
+    'practicalmeteor:chai',
+    'arggh:teleport']);
+  api.mainModule('src/teleport.tests.js', 'client');
 });
