@@ -19,3 +19,14 @@ Package.onUse(function(api) {
     'src/teleport.js'
   ], 'client');
 });
+
+Package.onTest(function (api) {
+  api.use('ecmascript');
+  api.use('meteor');
+  api.use('check');
+  api.use('blaze')
+  api.use('templating')
+  api.use('meteortesting:mocha');
+  api.use('practicalmeteor:chai');
+  api.use('arggh:teleport');
+});
