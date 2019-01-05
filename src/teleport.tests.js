@@ -45,7 +45,7 @@ describe('teleport to render destination', function () {
     })
   });
 
-  it ('renders a Temaplte in the document.body as default destination', function (done) {
+  it ('renders a Template in the document.body as default destination', function (done) {
     withRenderedTemplate('dest', {}, (el) => {
       isBeamed(el, 'body', '#test-target-id')
       done()
