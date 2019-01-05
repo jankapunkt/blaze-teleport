@@ -24,7 +24,6 @@ Package.onTest(function (api) {
   api.use([
     'ecmascript',
     'meteor',
-    'check',
     'blaze',
     'templating',
     'meteortesting:mocha',
