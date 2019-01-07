@@ -65,8 +65,10 @@ describe('teleport to render destination', function () {
     withRenderedTemplate('dest', {}, (el) => {
       const clickTarget = $('#click-target');
       clickTarget.on('click', () => {
-        assert.isTrue(eventMapScoped);
-        done();
+        setTimeout(() => {
+          assert.isTrue(eventMapScoped);
+          done();
+        }, 50)
       });
       // We need to simulate a mouse click
       // on the actual DOM element
