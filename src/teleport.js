@@ -16,15 +16,15 @@ Template.Teleport.onRendered(function () {
 
   // Find the view of the Template where the Teleport has been declared by traversing the view Tree.
   // see: https://github.com/meteor/blaze/blob/c6af95632b1a3f5a7077964e25c9be4ddaf7cc42/packages/blaze/view.js#L9
-  let parentView = this.view.parentView
+  let parentView = this.view.parentView;
   while (parentView.name.indexOf('Template') === -1) {
-    parentView = parentView.parentView
+    parentView = parentView.parentView;
   }
 
   // Connect the parent Template's events and ensure they receive the parents templateInstance as second param
-  this.view.templateContentBlock.__eventMaps = parentView.template.__eventMaps
+  this.view.templateContentBlock.__eventMaps = parentView.template.__eventMaps;
   this.teleported = Blaze.render(this.view.templateContentBlock, parentNode, null, parentView);
-  this.teleported.templateInstance = parentView.templateInstance
+  this.teleported.templateInstance = parentView.templateInstance;
 });
 
 Template.Teleport.onDestroyed(function () {
